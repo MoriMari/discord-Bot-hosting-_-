@@ -1,4 +1,5 @@
 import discord
+import os
 from discord import Game
 
 client = discord.Client()
@@ -23,4 +24,6 @@ async def on_message(message):
     if message.content.startswith("우리돼지?"):
         await message.channel.send("한돈!")
 
-client.run("NjM5ODQ5NzgzMDY1OTY4NjUw.XbxSag.crWKzH0XmR8kCiu6ihomFfSsShg")
+        
+access_token = os.environ["BOT_TOKEN"]       
+client.run(access_token)
